@@ -552,7 +552,7 @@
                             <option value="architektur">Architektur & Bauplanung</option>
                             <option value="andere-foerderbar">Andere förderfähige Branche</option>
                         </optgroup>
-                        <optgroup label="❌ Ausgeschlossene Branchen">
+                        <optgroup label="✗ Ausgeschlossene Branchen">
                             <option value="beratung">Unternehmensberatung / Wirtschaftsberatung</option>
                             <option value="steuerberatung">Steuerberatung</option>
                             <option value="rechtsberatung">Rechtsberatung / Anwaltskanzlei / Notariat</option>
@@ -565,7 +565,7 @@
                             <option value="oeffentlich">Öffentliche Einrichtung</option>
                         </optgroup>
                     </select>
-                    <span class="input-hint">⚠️ Bestimmte Branchen sind von der BAFA-Förderung ausgeschlossen</span>
+                    <span class="input-hint">⚠ Bestimmte Branchen sind von der BAFA-Förderung ausgeschlossen</span>
                 </div>
 
                 <div class="form-group">
@@ -596,7 +596,7 @@
                             <input type="radio" id="form4" name="legalForm" value="gemeinnuetzig">
                             <label for="form4">
                                 <span class="title">Gemeinnützige Organisation / Stiftung</span>
-                                <span class="description">❌ Nicht förderfähig</span>
+                                <span class="description">✗ Nicht förderfähig</span>
                             </label>
                         </div>
                     </div>
@@ -630,7 +630,7 @@
                             <input type="radio" id="size4" name="companySize" value="ueber-250">
                             <label for="size4">
                                 <span class="title">Über 250 Mitarbeiter</span>
-                                <span class="description">❌ Nicht als KMU förderfähig</span>
+                                <span class="description">✗ Nicht als KMU förderfähig</span>
                             </label>
                         </div>
                     </div>
@@ -661,7 +661,7 @@
                             <input type="radio" id="revenue4" name="revenue" value="ueber-50mio">
                             <label for="revenue4">
                                 <span class="title">Über 50 Mio. €</span>
-                                <span class="description">❌ Nicht als KMU förderfähig</span>
+                                <span class="description">✗ Nicht als KMU förderfähig</span>
                             </label>
                         </div>
                     </div>
@@ -774,7 +774,7 @@
                 </div>
 
                 <div class="warning-box">
-                    <strong>❌ Nicht förderfähig sind:</strong><br>
+                    <strong>✗ Nicht förderfähig sind:</strong><br>
                     • Vermittlungstätigkeiten<br>
                     • Überwiegend Rechts- und Versicherungsfragen<br>
                     • Steuerberatung, Buchführung, Jahresabschlüsse<br>
@@ -804,14 +804,14 @@
                             <input type="radio" id="prev3" name="previousFunding" value="ja-dieses-jahr-zweimal">
                             <label for="prev3">
                                 <span class="title">Ja, bereits zweimal in diesem Jahr</span>
-                                <span class="description">❌ Jahresmaximum erreicht</span>
+                                <span class="description">✗ Jahresmaximum erreicht</span>
                             </label>
                         </div>
                         <div class="radio-option">
                             <input type="radio" id="prev4" name="previousFunding" value="ja-gesamt-5mal">
                             <label for="prev4">
                                 <span class="title">Ja, insgesamt bereits 5 mal seit 2023</span>
-                                <span class="description">❌ Gesamtmaximum erreicht</span>
+                                <span class="description">✗ Gesamtmaximum erreicht</span>
                             </label>
                         </div>
                     </div>
@@ -829,7 +829,7 @@
                 <p class="step-description">Wie hoch sind die geplanten Beratungskosten?</p>
 
                 <div class="info-box">
-                    <strong>💡 Wichtige Informationen:</strong><br>
+                    <strong>ðŸ’¡ Wichtige Informationen:</strong><br>
                     • Maximale Fördersumme: <strong>3.500 €</strong> pro Beratung<br>
                     • Maximale Beratungsdauer: <strong>5 Tage</strong><br>
                     • Antrag muss <strong>VOR</strong> Beratungsbeginn gestellt werden<br>
@@ -967,7 +967,7 @@
         </div>
 
         <div class="footer-note">
-            <strong>ℹ️ Rechtlicher Hinweis:</strong> Dies ist eine unverbindliche Ersteinschätzung. Die tatsächliche Förderhöhe wird vom BAFA nach Prüfung Ihres Antrags festgelegt. Die Förderrichtlinie gilt bis 31.12.2026.
+            <strong>ℹ️ Rechtlicher Hinweis:</strong> Dies ist eine unverbindliche Ersteinschätzung. Die tatsächliche Förderhöhe wird vom BAFA nach Prüfung Ihres Antrags festgelegt. Die Förderrichtlinie gilt bis 31.12.2026.
         </div>
     </div>
 
@@ -1061,7 +1061,7 @@
 
                 // Check for medical professions special rules
                 if (industry === 'gesundheit-medizin') {
-                    alert('⚠️ Wichtiger Hinweis für medizinische Berufe:\n\nFür Ärzte, Zahnärzte, Psychotherapeuten und Heilpraktiker werden nur Beratungen zur Einführung oder Anpassung eines Qualitätssicherungssystems gefördert.\n\nBitte wählen Sie im nächsten Schritt entsprechend "Prozessoptimierung & Qualitätsmanagement" als Beratungsthema.');
+                    alert('⚠ Wichtiger Hinweis für medizinische Berufe:\n\nFür Ärzte, Zahnärzte, Psychotherapeuten und Heilpraktiker werden nur Beratungen zur Einführung oder Anpassung eines Qualitätssicherungssystems gefördert.\n\nBitte wählen Sie im nächsten Schritt entsprechend "Prozessoptimierung & Qualitätsmanagement" als Beratungsthema.');
                 }
 
                 // Check company size
@@ -1084,7 +1084,7 @@
 
                 // Info for young companies
                 if (companyAge.value === 'unter-1') {
-                    alert('ℹ️ Information für Jungunternehmen:\n\nUnternehmen im ersten Jahr nach Gründung müssen vor Antragstellung ein kostenloses Informationsgespräch mit einem Regionalpartner führen.\n\nIch unterstütze Sie gerne bei der Organisation dieses Gesprächs.');
+                    alert('ℹ️ Information für Jungunternehmen:\n\nUnternehmen im ersten Jahr nach Gründung müssen vor Antragstellung ein kostenloses Informationsgespräch mit einem Regionalpartner führen.\n\nIch unterstütze Sie gerne bei der Organisation dieses Gesprächs.');
                 }
 
                 return true;
@@ -1101,7 +1101,7 @@
 
                 // Check medical profession restriction
                 if (formData.industry === 'gesundheit-medizin' && consultingTopic.value !== 'prozesse') {
-                    alert('⚠️ Einschränkung für medizinische Berufe:\n\nFür Ärzte, Zahnärzte, Psychotherapeuten und Heilpraktiker werden gemäß § 2.1 der Förderrichtlinie nur Beratungen zur Einführung oder Anpassung eines Qualitätssicherungssystems gefördert.\n\nBitte wählen Sie "Prozessoptimierung & Qualitätsmanagement" als Beratungsthema.');
+                    alert('⚠ Einschränkung für medizinische Berufe:\n\nFür Ärzte, Zahnärzte, Psychotherapeuten und Heilpraktiker werden gemäß § 2.1 der Förderrichtlinie nur Beratungen zur Einführung oder Anpassung eines Qualitätssicherungssystems gefördert.\n\nBitte wählen Sie "Prozessoptimierung & Qualitätsmanagement" als Beratungsthema.');
                     return false;
                 }
 
@@ -1201,7 +1201,7 @@
             let resultHTML = `
                 <div class="result-box">
                     <div class="alert alert-success">
-                        <span style="font-size: 2rem;">🎉</span>
+                        <span style="font-size: 2rem;">ðŸŽ‰</span>
                         <div>
                             <strong>Glückwunsch! Sie sind förderfähig.</strong><br>
                             Ihre geschätzte BAFA-Förderung:
@@ -1228,7 +1228,7 @@
 
                 ${requestedAmount > maxFundableAmount ? `
                 <div class="alert alert-warning">
-                    <span style="font-size: 1.5rem;">⚠️</span>
+                    <span style="font-size: 1.5rem;">⚠</span>
                     <div>
                         <strong>Hinweis:</strong> Ihre Beratungskosten übersteigen den maximal förderfähigen Betrag von ${maxFundableAmount.toLocaleString('de-DE')} €. Die Förderung wird daher auf maximal ${actualFundingAmount.toLocaleString('de-DE')} € begrenzt.
                     </div>
@@ -1236,7 +1236,7 @@
                 ` : ''}
 
                 <div class="alert alert-info">
-                    <span style="font-size: 1.5rem;">ℹ️</span>
+                    <span style="font-size: 1.5rem;">ℹ️</span>
                     <div>
                         <strong>Wichtige Rahmenbedingungen:</strong><br>
                         • Pro Jahr maximal 2 Förderungen<br>
@@ -1259,7 +1259,7 @@
 
                 ${formData.vatDeductible === 'nein' ? `
                 <div class="alert alert-success">
-                    <span style="font-size: 1.5rem;">💰</span>
+                    <span style="font-size: 1.5rem;">ðŸ’°</span>
                     <div>
                         <strong>Vorteil für Sie:</strong> Als nicht-vorsteuerabzugsberechtigtes Unternehmen (Kleinunternehmer nach § 19 UStG) wird die Förderung seit dem 01.01.2025 auf den Brutto-Betrag berechnet. Das erhöht Ihre effektive Förderung!
                     </div>
@@ -1310,29 +1310,88 @@
             const company = document.getElementById('contactCompany').value;
             const message = document.getElementById('contactMessage').value;
 
-            // Prepare funding summary
-            const fundingSummary = {
-                name,
-                email,
-                phone,
-                company,
-                message,
-                fundingData: formData
+            // Beratungsthemen-Mapping für bessere Lesbarkeit
+            const topicNames = {
+                'digitalisierung': 'Digitalisierung & IT-Strategie',
+                'marketing': 'Marketing & Sichtbarkeit',
+                'prozesse': 'Prozessoptimierung & Qualitätsmanagement',
+                'strategie': 'Strategie & Geschäftsmodell',
+                'nachfolge': 'Unternehmensnachfolge',
+                'fachkraefte': 'Fachkräftesicherung & Personal',
+                'finanzen': 'Finanzmanagement & Controlling',
+                'nachhaltigkeit': 'Nachhaltigkeit & Klimaschutz',
+                'sonstiges': 'Sonstiges'
             };
 
-            // In a real implementation, this would send data to your backend
-            console.log('Form Data:', fundingSummary);
+            // Branchen-Mapping
+            const industryNames = {
+                'handwerk': 'Handwerk',
+                'produktion': 'Produktion & Fertigung',
+                'einzelhandel': 'Einzelhandel & E-Commerce',
+                'gastronomie': 'Gastronomie & Hotellerie',
+                'dienstleistung': 'Dienstleistungen',
+                'it-software': 'IT & Software-Entwicklung',
+                'marketing-agentur': 'Marketing & Werbeagenturen',
+                'immobilien': 'Immobilienverwaltung & -vermittlung',
+                'transport': 'Transport & Logistik',
+                'gesundheit-medizin': 'Gesundheitswesen',
+                'ingenieur': 'Ingenieurbüros',
+                'architektur': 'Architektur & Bauplanung',
+                'andere-foerderbar': 'Andere Branche'
+            };
 
-            // Show success message
-            alert('Vielen Dank für Ihre Anfrage!\n\nIch melde mich innerhalb von 24 Stunden bei Ihnen, um Ihre BAFA-Förderung zu besprechen.\n\nBis bald!\nThomas Berg');
+            // Unternehmensgrößen-Mapping
+            const sizeNames = {
+                'bis-10': 'Bis 10 Mitarbeiter',
+                '11-50': '11-50 Mitarbeiter',
+                '51-250': '51-250 Mitarbeiter'
+            };
+
+            // E-Mail Betreff
+            const subject = `BAFA Förderanfrage von ${name} (${company})`;
             
-            // Optional: Redirect to contact page or thank you page
-            // window.location.href = 'https://www.tbcs-beratung.de/kontakt/';
+            // E-Mail Body formatieren
+            let body = `Neue BAFA-Förderanfrage über den Fördermittelcheck\n`;
+            body += `========================================\n\n`;
+            body += `KONTAKTDATEN:\n`;
+            body += `- Name: ${name}\n`;
+            body += `- E-Mail: ${email}\n`;
+            body += `- Telefon: ${phone || 'nicht angegeben'}\n`;
+            body += `- Unternehmen: ${company}\n\n`;
+            body += `UNTERNEHMENSDATEN:\n`;
+            body += `- Branche: ${industryNames[formData.industry] || formData.industry}\n`;
+            body += `- Rechtsform: ${formData.legalForm}\n`;
+            body += `- Unternehmensgröße: ${sizeNames[formData.companySize] || formData.companySize}\n`;
+            body += `- Unternehmensalter: ${formData.companyAge}\n`;
+            body += `- Standort: ${formData.location === 'ost' ? 'Neue Bundesländer (80%)' : 'Alte Bundesländer (50%)'}\n`;
+            body += `- Vorsteuerabzugsberechtigt: ${formData.vatDeductible === 'ja' ? 'Ja' : 'Nein (Kleinunternehmer)'}\n\n`;
+            body += `BERATUNGSBEDARF:\n`;
+            body += `- Thema: ${topicNames[formData.consultingTopic] || formData.consultingTopic}\n`;
+            body += `- Geschätzte Beratungskosten: ${formData.consultingCost.toLocaleString('de-DE')} €\n`;
+            body += `- Bisherige BAFA-Förderungen: ${formData.previousFunding}\n\n`;
             
-            // For demo purposes, reset the calculator after a delay
+            if (message) {
+                body += `NACHRICHT:\n${message}\n\n`;
+            }
+            
+            body += `========================================\n`;
+            body += `Diese Anfrage wurde über den BAFA Fördermittelcheck gesendet.`;
+
+            // mailto-Link öffnen
+            const mailtoLink = `mailto:info@tbcs-consulting.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // E-Mail-Client öffnen
+            window.location.href = mailtoLink;
+
+            // Erfolgsmeldung anzeigen
+            setTimeout(() => {
+                alert('Ihr E-Mail-Programm wurde geöffnet.\n\nBitte senden Sie die vorausgefüllte E-Mail ab.\n\nIch melde mich innerhalb von 24 Stunden bei Ihnen!\n\nBis bald!\nThomas Berg');
+            }, 500);
+            
+            // Nach kurzer Verzögerung zurücksetzen
             setTimeout(() => {
                 resetCalculator();
-            }, 3000);
+            }, 4000);
         });
 
         // Initialize
