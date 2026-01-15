@@ -908,61 +908,17 @@
 
                 <div id="resultContent"></div>
 
-                <div class="button-group">
-                    <button class="btn btn-secondary" onclick="resetCalculator()">← Neu berechnen</button>
-                    <button class="btn btn-primary" onclick="showContactForm()">Jetzt Beratung anfragen →</button>
-                </div>
-            </div>
-
-            <!-- Step 5: Contact Form -->
-            <div class="step" id="step5">
-                <h2 class="step-title">Kostenfreies Erstgespräch</h2>
-                <p class="step-description">Lassen Sie uns gemeinsam Ihre Fördermöglichkeiten besprechen</p>
-
-                <div class="alert alert-success">
+                <div class="alert alert-success" style="margin-top: 20px;">
                     <span style="font-size: 1.5rem;">✓</span>
                     <div>
-                        <strong>Ihre Förderung wartet!</strong><br>
-                        Als BAFA-zugelassener Berater begleite ich Sie von der Antragstellung bis zur erfolgreichen Umsetzung.
+                        <strong>Interesse an einer geförderten Beratung?</strong><br>
+                        Nehmen Sie Kontakt über das Kontaktformular auf meiner Homepage auf – ich melde mich zeitnah bei Ihnen für ein kostenfreies Erstgespräch.
                     </div>
                 </div>
 
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label>Ihr Name *</label>
-                        <input type="text" id="contactName" required placeholder="Max Mustermann">
-                    </div>
-
-                    <div class="form-group">
-                        <label>E-Mail-Adresse *</label>
-                        <input type="email" id="contactEmail" required placeholder="max@beispiel.de">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Telefonnummer (optional)</label>
-                        <input type="text" id="contactPhone" placeholder="+49 123 456789">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Unternehmen *</label>
-                        <input type="text" id="contactCompany" required placeholder="Musterfirma GmbH">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Ihre Nachricht (optional)</label>
-                        <textarea id="contactMessage" rows="4" placeholder="Beschreiben Sie kurz Ihren Beratungsbedarf..."></textarea>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="privacy" required>
-                        <label for="privacy">Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu. *</label>
-                    </div>
-
-                    <div class="button-group">
-                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Zurück</button>
-                        <button type="submit" class="btn btn-primary">Anfrage absenden →</button>
-                    </div>
-                </form>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="resetCalculator()">← Neu berechnen</button>
+                </div>
             </div>
         </div>
 
@@ -973,7 +929,7 @@
 
     <script>
         let currentStep = 1;
-        const totalSteps = 5;
+        const totalSteps = 4;
         const formData = {};
 
         // Excluded industries based on BAFA guidelines
@@ -1277,14 +1233,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function showContactForm() {
-            document.getElementById('step4').classList.remove('active');
-            currentStep = 5;
-            document.getElementById('step5').classList.add('active');
-            updateProgress();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
         function resetCalculator() {
             currentStep = 1;
             document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
@@ -1299,100 +1247,6 @@
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('contactName').value;
-            const email = document.getElementById('contactEmail').value;
-            const phone = document.getElementById('contactPhone').value;
-            const company = document.getElementById('contactCompany').value;
-            const message = document.getElementById('contactMessage').value;
-
-            // Beratungsthemen-Mapping für bessere Lesbarkeit
-            const topicNames = {
-                'digitalisierung': 'Digitalisierung & IT-Strategie',
-                'marketing': 'Marketing & Sichtbarkeit',
-                'prozesse': 'Prozessoptimierung & Qualitätsmanagement',
-                'strategie': 'Strategie & Geschäftsmodell',
-                'nachfolge': 'Unternehmensnachfolge',
-                'fachkraefte': 'Fachkräftesicherung & Personal',
-                'finanzen': 'Finanzmanagement & Controlling',
-                'nachhaltigkeit': 'Nachhaltigkeit & Klimaschutz',
-                'sonstiges': 'Sonstiges'
-            };
-
-            // Branchen-Mapping
-            const industryNames = {
-                'handwerk': 'Handwerk',
-                'produktion': 'Produktion & Fertigung',
-                'einzelhandel': 'Einzelhandel & E-Commerce',
-                'gastronomie': 'Gastronomie & Hotellerie',
-                'dienstleistung': 'Dienstleistungen',
-                'it-software': 'IT & Software-Entwicklung',
-                'marketing-agentur': 'Marketing & Werbeagenturen',
-                'immobilien': 'Immobilienverwaltung & -vermittlung',
-                'transport': 'Transport & Logistik',
-                'gesundheit-medizin': 'Gesundheitswesen',
-                'ingenieur': 'Ingenieurbüros',
-                'architektur': 'Architektur & Bauplanung',
-                'andere-foerderbar': 'Andere Branche'
-            };
-
-            // Unternehmensgrößen-Mapping
-            const sizeNames = {
-                'bis-10': 'Bis 10 Mitarbeiter',
-                '11-50': '11-50 Mitarbeiter',
-                '51-250': '51-250 Mitarbeiter'
-            };
-
-            // E-Mail Betreff
-            const subject = `BAFA Förderanfrage von ${name} (${company})`;
-            
-            // E-Mail Body formatieren
-            let body = `Neue BAFA-Förderanfrage über den Fördermittelcheck\n`;
-            body += `========================================\n\n`;
-            body += `KONTAKTDATEN:\n`;
-            body += `- Name: ${name}\n`;
-            body += `- E-Mail: ${email}\n`;
-            body += `- Telefon: ${phone || 'nicht angegeben'}\n`;
-            body += `- Unternehmen: ${company}\n\n`;
-            body += `UNTERNEHMENSDATEN:\n`;
-            body += `- Branche: ${industryNames[formData.industry] || formData.industry}\n`;
-            body += `- Rechtsform: ${formData.legalForm}\n`;
-            body += `- Unternehmensgröße: ${sizeNames[formData.companySize] || formData.companySize}\n`;
-            body += `- Unternehmensalter: ${formData.companyAge}\n`;
-            body += `- Standort: ${formData.location === 'ost' ? 'Neue Bundesländer (80%)' : 'Alte Bundesländer (50%)'}\n`;
-            body += `- Vorsteuerabzugsberechtigt: ${formData.vatDeductible === 'ja' ? 'Ja' : 'Nein (Kleinunternehmer)'}\n\n`;
-            body += `BERATUNGSBEDARF:\n`;
-            body += `- Thema: ${topicNames[formData.consultingTopic] || formData.consultingTopic}\n`;
-            body += `- Geschätzte Beratungskosten: ${formData.consultingCost.toLocaleString('de-DE')} €\n`;
-            body += `- Bisherige BAFA-Förderungen: ${formData.previousFunding}\n\n`;
-            
-            if (message) {
-                body += `NACHRICHT:\n${message}\n\n`;
-            }
-            
-            body += `========================================\n`;
-            body += `Diese Anfrage wurde über den BAFA Fördermittelcheck gesendet.`;
-
-            // mailto-Link öffnen
-            const mailtoLink = `mailto:info@tbcs-consulting.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // E-Mail-Client öffnen
-            window.location.href = mailtoLink;
-
-            // Erfolgsmeldung anzeigen
-            setTimeout(() => {
-                alert('Ihr E-Mail-Programm wurde geöffnet.\n\nBitte senden Sie die vorausgefüllte E-Mail ab.\n\nIch melde mich innerhalb von 24 Stunden bei Ihnen!\n\nBis bald!\nThomas Berg');
-            }, 500);
-            
-            // Nach kurzer Verzögerung zurücksetzen
-            setTimeout(() => {
-                resetCalculator();
-            }, 4000);
-        });
 
         // Initialize
         updateProgress();
